@@ -73,8 +73,10 @@ footer a:hover {
   justify-content: space-around;
 }
 .time {
+  color: #5c5757;
+  font-family: "Mulish", sans-serif;
   font-size: 36px;
-  font-weight: 900;
+  font-weight: 700;
 }
 .city-date p {
   font-size: 24px;
