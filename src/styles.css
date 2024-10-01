@@ -40,6 +40,10 @@ select {
   padding: 10px;
   width: 80%;
 }
+select:focus {
+  outline: none;
+  border: 2px solid #62929a;
+}
 
 footer {
   margin-top: 50px;
@@ -82,4 +86,19 @@ footer a:hover {
   font-size: 24px;
 }
 
+.city-selection {
+  color: #363434;
+  font-size: 24px;
+  padding: 20px 50px 0 50px;
+  text-align: center;
+}
+
 /* CSS for ids */
+
+#reload {
+  display: none;
+}
+#reload-button:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}

@@ -27,40 +27,55 @@
         <h1>World Clock</h1>
       </header>
       <main>
-        <select>
+        <div id="cities">
+          <div class="city-container" id="nice">
+            <div class="city-date">
+              <h2>Nice 🇫🇷</h2>
+              <p id="nice-date"></p>
+            </div>
+            <div class="time" id="nice-time">
+              <p></p>
+            </div>
+          </div>
+          <div class="city-container" id="bristol">
+            <div class="city-date">
+              <h2>Bristol 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h2>
+              <p id="bristol-date"></p>
+            </div>
+            <div class="time" id="bristol-time">
+              <p></p>
+            </div>
+          </div>
+          <div class="city-container" id="perth">
+            <div class="city-date">
+              <h2>Perth 🇦🇺</h2>
+              <p id="perth-date"></p>
+            </div>
+            <div class="time" id="perth-time">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <p class="city-selection" id="more-options">
+          Can't find the city you're looking for? <br />There are some more
+          options below ⤵️
+        </p>
+        <select id="cities-dropdown">
           <option value="0">Select a city</option>
-          <option value="berlin">Berlin</option>
-          <option value="chicago">Chicago</option>
-          <option value="wellington">Wellington</option>
-          <option value="tokyo">Tokyo</option>
+          <option value="Pacific/Auckland">Auckland 🇳🇿</option>
+          <option value="Asia/Bangkok">Bangkok 🇹🇭</option>
+          <option value="Africa/Cairo">Cairo 🇪🇬</option>
+          <option value="Asia/Karachi">Karachi 🇵🇰</option>
+          <option value="America/Lima">Lima 🇵🇪</option>
+          <option value="Europe/Moscow">Moscow 🇷🇺</option>
+          <option value="America/Santiago">Santiago 🇨🇱</option>
+          <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+          <option value="America/Toronto">Toronto 🇨🇦</option>
         </select>
-        <div class="city-container" id="nice">
-          <div class="city-date">
-            <h2>Nice 🇫🇷</h2>
-            <p id="nice-date"></p>
-          </div>
-          <div class="time" id="nice-time">
-            <p></p>
-          </div>
-        </div>
-        <div class="city-container" id="bristol">
-          <div class="city-date">
-            <h2>Bristol 🏴󠁧󠁢󠁥󠁮󠁧󠁿</h2>
-            <p id="bristol-date"></p>
-          </div>
-          <div class="time" id="bristol-time">
-            <p></p>
-          </div>
-        </div>
-        <div class="city-container" id="perth">
-          <div class="city-date">
-            <h2>Perth 🇦🇺</h2>
-            <p id="perth-date"></p>
-          </div>
-          <div class="time" id="perth-time">
-            <p></p>
-          </div>
-        </div>
+        <p class="city-selection" id="reload">
+          Click reload <span id="reload-button">🔄</span> to restore original
+          cities
+        </p>
       </main>
       <footer>
         This project was coded by

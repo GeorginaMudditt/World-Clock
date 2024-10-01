@@ -8,8 +8,6 @@ function updateNiceTime() {
   niceDateElement.innerHTML = niceDate;
   niceTimeElement.innerHTML = niceTime;
 }
-updateNiceTime();
-setInterval(updateNiceTime, 1000);
 
 function updateBristolTime() {
   let bristolElement = document.querySelector("#bristol");
@@ -21,8 +19,6 @@ function updateBristolTime() {
   bristolDateElement.innerHTML = bristolDate;
   bristolTimeElement.innerHTML = bristolTime;
 }
-updateBristolTime();
-setInterval(updateBristolTime, 1000);
 
 function updatePerthTime() {
   let perthElement = document.querySelector("#perth");
@@ -34,5 +30,39 @@ function updatePerthTime() {
   perthDateElement.innerHTML = perthDate;
   perthTimeElement.innerHTML = perthTime;
 }
+
+function changeDisplayedCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `<div class="city-container">
+            <div class="city-date">
+              <h2>${cityName}</h2>
+              <p>${cityTime.format("dddd DD MMMM YYYY")}</p>
+            </div>
+            <div class="time">
+              <p>${cityTime.format("HH:mm:ss")}</p>
+            </div>
+        </div>`;
+  let reloadElement = document.querySelector("#reload");
+  if (reloadElement) {
+    reloadElement.style.display = "block";
+  }
+  let reloadButton = document.querySelector("#reload-button");
+  if (reloadButton) {
+    reloadButton.addEventListener("click", function () {
+      location.reload();
+    });
+  }
+}
+
+let citiesSelectElement = document.querySelector("#cities-dropdown");
+citiesSelectElement.addEventListener("change", changeDisplayedCity);
+
+updateNiceTime();
+setInterval(updateNiceTime, 1000);
+updateBristolTime();
+setInterval(updateBristolTime, 1000);
 updatePerthTime();
 setInterval(updatePerthTime, 1000);
